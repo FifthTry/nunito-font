@@ -1,51 +1,122 @@
--- import: fifthtry.github.io/nunito-font/assets
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fifthtry.github.io/package-doc/code-block as cb
+-- import: fifthtry.github.io/package-doc/typography as tf
+-- import: fastn
+-- import: fifthtry.github.io/nunito-font/assets as nunito-assets
 
 
 
--- ds.page: Welcome to your [FASTN site](https://fastn.dev/)
+-- ftd.type nunito-demo:
+line-height.px: 36
+size.px: 22
+letter-spacing.px: 0
+font-family: $nunito-assets.fonts.Nunito
+weight: 400
+
+
+-- ftd.type nunito-demo-heading:
+line-height.px: 56
+size.px: 48
+letter-spacing.px: 0
+font-family: $nunito-assets.fonts.Nunito
+weight: 400
+
+-- ftd.responsive-type small-heading:
+desktop: $nunito-demo
+mobile: $nunito-demo
+
+-- ftd.responsive-type large-heading:
+desktop: $nunito-demo-heading
+mobile: $nunito-demo-heading
+
+
 
 -- ftd.column:
-align-self: center
+width: fill-container
+padding-horizontal.px: 50
+padding-horizontal.px if {ftd.device == "mobile"}: 20
+background.solid: $inherited.colors.background.base
 
--- chat.message-left: Yo! I am Amit Upadhyay, CEO of FifthTry, welcome to the new world of FTD.
 
--- ds.markdown: 
+-- pd.package: nunito Font
+name: fifthtry.github.io/nunito-font
 
-You reached the right place, and from here let me assure you, your FTD journey is going superfast. 🙂
+This component consist of nunito font with all it's styles.
 
--- end: chat.message-left
 
--- chat.message-right:  😊 Liking this chat component?
-
--- ds.markdown:
-
-[Click here to learn more](https://fifthtry.github.io/bling/chat/)
-👍
-
--- end: chat.message-right
-
--- end: ftd.column
-
--- ds.h1: How to use?
-
-It's very simple like making a sandwich. Create new `.ftd` file and just say:
-
--- ds.code: `-- ds.page` 
+-- cb.code: How to use
 lang: ftd
 
-\-- ds.page: Your page title goes here
+include fifthtry.github.io/nunito-font package into FPM.ftd file
 
-Your page content goes here.
+\-- fpm.dependency: fifthtry.github.io/nunito-font
+
+\-- fpm.auto-import: fifthtry.github.io/nunito-font
+
+Inside your .ftd file to change for any specific token use:
+
+\-- fpm.type.headline-small.font: $nunito.fonts.Nunito
+
+\-- ftd.text:
+role: $fpm.type.headline-small
 
 
--- ds.h1: Need sidebar at right side of page?
-
-Here it is, [use this document](https://fifthtry.github.io/doc-site/docs/right-sidebar/).
 
 
--- ds.h1: 👀 Learn FTD and become a pro?
+-- tf.h2: `nunito-font` regular 18px:
 
-You are one click away, just check [our documentation](https://fastn.dev/) and 
-dont forget to jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: regular
 
--- end: ds.page
+-- tf.h2: `nunito-font` regular strike through 18px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: regular strike
+
+-- tf.h2: `nunito-font` regular underline 18px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: regular underline
+
+-- tf.h2: `nunito-font` regular italic 18px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: regular italic
+
+-- tf.h2: `nunito-font` bold 18px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: bold
+
+-- tf.h2: `nunito-font` bold italic 18px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $small-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 24
+;;style: bold italic
+
+-- tf.h2: `nunito-font` heading regular 48px:
+
+-- ftd.text: The quick brown fox jumps over the lazy dog
+role: $large-heading
+color: $inherited.colors.text-strong
+margin-bottom.px: 40
+;;style: regular
+
+-- end: ftd.column

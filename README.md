@@ -1,43 +1,52 @@
-# Welcome to your [FASTN site](https://fastn.io/)
+# Raleway : FASTN Font Package
 
-FASTN Blank Package Template Repo
+This repository contains a [fpm font package](https://fpm.dev/featured/fonts/) containing [Google Font: 
+Nunito]https://fonts.google.com/specimen/Nunito?query=nunito).
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fifthtry/fastn-heroku&env[DOWNLOAD_BASE_URL]=https://raw.githubusercontent.com/fifthtry/nunito-font/main/)
-
-
-> 🧑‍🚀 **Seasoned traveler?** update this file. Enjoy!
-
-![doc-site](doc-site-example.png)
+Nunito is a well balanced sans serif typeface superfamily, with 2 versions: The project began with Nunito, created by Vernon Adams as a rounded terminal sans serif for display typography. Jacques Le Bailly extended it to a full set of weights, and an accompanying regular non-rounded terminal version, Nunito Sans.
 
 
-## 🚀 Project Structure
 
-Inside of your FASTN project, you'll see the following folders and files:
+Designers: Vernon Adams
 
-```
-/
-├── .build/
-│   └── index.html
-├── .packages/
-│   └── fifthtry.github.io/
-│   	└── All downloaded dependencies
-│   	
-├── FASTN.ftd
-├── index.ftd
-└── README.md
+## How To Use This Font In Your FPM Package:
+
+[Read the docs and demo](https://fifthtry.github.io/nunito-font).
+
+TLRD:
+
+Include fifthtry.github.io/raleway-font package into `FASTN.ftd` file:
+
+```ftd
+;-- fpm.dependency: fifthtry.github.io/nunito-font
 ```
 
-## 🧞 Commands
+Inside your `FASTN/config.ftd` use the font:
 
-All commands are run from the root of the project, from a terminal:
+```ftd
+;-- import: fifthtry.github.io/nunito-font/assets as nunito
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `fastn build`            | FASTN builder installs all `FASTN` dependencies        |
-| `fastn serve`            | Starts local dev server at available port`localhost:8000`          |
+;-- fpm.type.headline-small: $nunito.fonts.Nunito
+```
 
+Now if in any file you do:
 
+```ftd
+;-- ftd.text:
+role: $fpm.type.headline-small
+```
+
+You will see the `Nunito` font.
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://fastn.io/) or jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+Feel free to check [our documentation](https://fpm.dev/) or jump into our [FifthTry Discord 
+server](https://discord.gg/bucrdvptYd).
+
+## License
+
+Since Nunito  Font is under [OFL](https://fonts.google.com/specimen/Nunito/about?query=nunito), this FPM wrapper is also
+under [OFL](LICENSE).
+
+
+
